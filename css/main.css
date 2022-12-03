@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+:root {
+  --bg-colour: #3b3b3b;
+  --bg-bright: #212121;
+  --text-colour: #cccccc;
+  --selection-colour: #7f7f7f55;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+::-webkit-search-decoration,
+::-webkit-search-cancel-button,
+::-webkit-search-results-button,
+::-webkit-search-results-decoration {
+  display: none;
+}
+
+body {
+  height: 100vh;
+  background: var(--bg-colour);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+::selection {
+  color: None;
+  background: var(--selection-colour);
+}
+
+#image {
+  position: fixed;
+  top: 37%;
+  transform: translate(0, -50%);
+  cursor: pointer;
+  transition: 0.15s ease-in-out;
+}
+
+#image:hover {
+  transform: translate(0, -50%) scale(1.05);
+}
+
+#form {
+  position: relative;
+  width: 35vw;
+  height: 40px;
+}
+
+#form input {
+  position: relative;
+  outline: none !important;
+  background: var(--bg-bright);
+  top: 55%;
+  font: 14px "Roboto";
+  color: var(--text-colour);
+  height: 100%;
+  width: 100%;
+  border: 2px solid var(--bg-bright);
+  border-radius: 10px;
+  text-align: left;
+  padding: 0 15px;
+}
+
+#form #searchBtn {
+  position: absolute;
+  outline: none !important;
+  background: var(--bg-bright);
+  top: 105%;
+  right: -2;
+  height: 30px;
+  width: 30px;
+  border: none;
+  border-radius: 10px;
+  color: var(--text-colour);
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-24px, -50%);
+  transition: 0.15s ease-in-out;
+}
